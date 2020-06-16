@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, TextInput, Text , TouchableHighlight} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 function LoginScreen({navigation }){
 const [username, setUsername] = useState('null')

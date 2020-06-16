@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, SafeAreaView, TouchableHighlight, Image} from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView, TouchableHighlight, Image, Button} from 'react-native';
 import MapView from 'react-native-maps';
 import { SearchBar } from 'react-native-elements';
 
 
+function Homepage({navigation}){
 
-function Homepage(props){
-
+    navigation.setOptions({
+        headerLeft: () => (
+          <TouchableHighlight style={styles.menuButton} onPress={() => navigation.navigate('Menu', { transition: 'horizontal' })}>
+            <Image style = {styles.img} source={require('../../assets/menu.png')}></Image>
+          </TouchableHighlight>
+        ),
+      });
+    
     return(
         <SafeAreaView style={styles.background}>
-            <View style={styles.upperView}>
-                <Text style={styles.title}>CrowdChecker</Text>
-                <TouchableHighlight>
-                    <Image style={styles.img} source={require('../../assets/menu.png')}></Image>
-                </TouchableHighlight>
-            </View>
             <MapView style={styles.mapView}
-                initialRegion={{latitude: 45.4626482, longitude: 9.0376489, latitudeDelta: 0.0922, longitudeDelta: 0.0421,}} />
+                initialRegion={{latitude: 45.4642200, longitude: 9.1905600, latitudeDelta: 0.0922, longitudeDelta: 0.0421,}} />
             <View style={styles.lowerView}>
                 <SearchBar
                 searchIcon={{ size: 24 }}
@@ -32,23 +33,25 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         flex: 1,
     },
-    img: {
-        position: 'absolute',
-        top: 15,
-        left: 20,
-        height: 35,
-        width: 35,
-    },
-    upperView: {
-        backgroundColor:'white',
-        flex: 0.12,
-    },
     mapView: {
         flex: 1,
     },
     lowerView: {
         backgroundColor:'white',
         flex: 0.2,
+    },
+    menuButton:{
+        top: 3,
+        left:10,
+        backgroundColor:'white',
+        height: 50, 
+        width: 50,
+    },
+    img:{
+        top: 5,
+        left: 5,
+        height:35,
+        width: 35,
     },
     title: {
         position:'absolute',
