@@ -5,6 +5,8 @@ import Homepage from './src/screens/HomePage';
 import { NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Menu from './src/screens/Menu';
+import Profile from './src/screens/Profile';
+import Statistics from './src/screens/Statistics';
 
 
 export default function App({navigation}) {
@@ -39,6 +41,16 @@ export default function App({navigation}) {
       component={Menu}
       options={{ headerTitle: () => <CrowdCheckerTitle /> }}
        />
+      <Stack.Screen
+      name="Profile"
+      component={Profile}
+      options={{headerTitle: () => <CrowdCheckerTitle/>}}
+      />
+      <Stack.Screen
+      name="Statistics"
+      component={Statistics}
+      options={{headerTitle: () => <CrowdCheckerTitle/>}}
+      />
     </Stack.Navigator>
   </NavigationContainer>)
 }

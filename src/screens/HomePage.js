@@ -8,7 +8,7 @@ function Homepage({navigation}){
 
     navigation.setOptions({
         headerLeft: () => (
-          <TouchableHighlight style={styles.menuButton} onPress={() => navigation.navigate('Menu', { transition: 'horizontal' })}>
+          <TouchableHighlight style={styles.menuButton} onPress={() => navigation.navigate('Menu')}>
             <Image style = {styles.img} source={require('../../assets/menu.png')}></Image>
           </TouchableHighlight>
         ),

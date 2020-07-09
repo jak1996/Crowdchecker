@@ -10,7 +10,7 @@ function Menu({navigation}){
             <View style={styles.profileView}>
                 <Image source={require('../../assets/cr7.jpg')} style={styles.img}></Image>
                 <Text style={styles.profileText}>Profile</Text>
-                <TouchableHighlight style={styles.arrowRightButton} onPress={() => alert()}>
+                <TouchableHighlight style={styles.arrowRightButton} onPress={() => navigation.navigate('Profile')}>
                      <Image style = {styles.arrowRightImage} source={require('../../assets/arrow_right.png')}></Image>
                 </TouchableHighlight>
             </View>
@@ -24,7 +24,7 @@ function Menu({navigation}){
                 <Text style={styles.menuOptionText}>System settings</Text>
             </View>
             <View style={styles.statisticsView}>
-                <TouchableHighlight style={styles.menuOptionButton} onPress={() => alert()}>
+                <TouchableHighlight style={styles.menuOptionButton} onPress={() => navigation.navigate('Statistics')}>
                      <Image style = {styles.menuOptionImage} source={require('../../assets/statistics.png')}></Image>
                 </TouchableHighlight>
                 <Text style={styles.menuOptionText}>Statistics</Text>
@@ -60,7 +60,7 @@ const styles= StyleSheet.create({
         height: 80,
         width: 80,
         borderRadius:50,
-        borderColor: 'green',
+        borderColor: 'lightgrey',
         borderWidth: 2,
     },
     profileText:{
