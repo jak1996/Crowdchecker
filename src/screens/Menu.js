@@ -14,9 +14,6 @@ function Menu({navigation}){
                      <Image style = {styles.arrowRightImage} source={require('../../assets/arrow_right.png')}></Image>
                 </TouchableHighlight>
             </View>
-            <View style={styles.homeView}>
-                <Text style={{alignItems: 'center', justifyContent: 'center'}}>Home</Text>
-            </View>
             <View style={styles.systemSettingsView}>
                 <TouchableHighlight style={styles.menuOptionButton} onPress={() => alert()}>
                      <Image style = {styles.menuOptionImage} source={require('../../assets/levels.png')}></Image>
@@ -120,7 +117,7 @@ const styles= StyleSheet.create({
     },
     logoutView:{
         position: 'relative',
-        top: '30%',
+        top: '40%',
         flex: 0.1,
         backgroundColor: 'white',
         borderBottomWidth: 1,
