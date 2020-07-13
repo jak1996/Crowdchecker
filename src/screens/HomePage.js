@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, SafeAreaView, TouchableHighlight, Image, Button} from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { SearchBar } from 'react-native-elements';
 
 
@@ -16,8 +16,24 @@ function Homepage({navigation}){
     
     return(
         <SafeAreaView style={styles.background}>
-            <MapView style={styles.mapView}
-                initialRegion={{latitude: 45.4642200, longitude: 9.1905600, latitudeDelta: 0.0922, longitudeDelta: 0.0421,}} />
+            <MapView style={styles.mapView} 
+                initialRegion={{latitude: 45.4642200, longitude: 9.1905600, latitudeDelta: 0.0922, longitudeDelta: 0.0421,}}>
+                    <Marker coordinate={{ latitude: 45.465844, longitude: 9.191561}}
+                pinColor="green"
+                />
+                <Marker coordinate={{ latitude: 45.465673, longitude: 9.191439}}
+                pinColor="green"
+                />
+                <Marker coordinate={{ latitude: 45.465805, longitude: 9.191665}}
+                pinColor="green"
+                />
+                <Marker coordinate={{ latitude: 45.460157, longitude: 9.167233}}
+                pinColor="green"
+                />
+                <Marker coordinate={{ latitude: 45.477697, longitude: 9.188633}}
+                pinColor="green"
+                />
+                </MapView>
             <View style={styles.lowerView}>
                 <SearchBar
                 searchIcon={{ size: 24 }}

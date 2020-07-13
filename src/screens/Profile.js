@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import {View, StyleSheet, Text, Image, Alert} from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import auth from '@react-native-firebase/auth';
+import * as firebase from "firebase";
+
 
 function Profile({navigation}){
-
     return(
         <View style={{flex: 1, backgroundColor: 'white'}}>
             <View style={styles.UpperView}>
@@ -21,7 +23,7 @@ function Profile({navigation}){
             </View>
             <View style={styles.FieldView}>
                 <Text style={styles.FieldTypeText}>EMAIL</Text>
-                <Text style={styles.FieldText}>Cr7@gmail.com</Text>
+                <Text style={styles.FieldText}>{firebase.auth().currentUser.email}</Text>
             </View>
             <View style={styles.FieldView}>
                 <Text style={styles.FieldTypeText}>PHONE</Text>
