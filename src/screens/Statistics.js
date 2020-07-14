@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import {View, StyleSheet, Text, Button} from 'react-native'
+import {View, StyleSheet, Text, Button} from 'react-native';
+import * as firebase from "firebase";
 
 function Statistics({navigation}){
-
+        var userRef = firebase.database().ref(firebase.auth().currentUser.uid).on('value', (snapshot) => {
+            const userObj = snapshot.val();
+            this.activitydescription = userObj.activitydescription;
+            this.activityname = userObj.activityname;
+          });
+    
     return(
         <View style={{flex: 1, backgroundColor: 'white'}}>
             <View style={styles.UpperView}>
@@ -11,18 +17,16 @@ function Statistics({navigation}){
                     <Text style={styles.SystemStatusText}>the system is active</Text>
                 </View>
             </View>
+            
             <View style={styles.detailsView}>
+            <View style={{flex: 0.2, width:'100%'}}>
+    <Text style={styles.detailsTitle}>{this.activityname}</Text>
+                </View>
                 <View style={{flex: 0.2, width:'100%'}}>
                     <Text style={styles.detailsTitle}>Details of the activity</Text>
                 </View>
                 <View style={{flex: 0.8, flexDirection: 'row', width: '90%'}}>
-                    <Text style={styles.detailsDescription}>Lorem ipsum dolor sit amet,
-                    consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem
-                    ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur.
-                    Duis aute irure reprehenderit in voluptate velit esse cillum dolore
-                    eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
-                    sunt in culpa qui officia deserunt mollit anim id est laborum</Text>
+                    <Text style={styles.detailsDescription}>{this.activitydescription}</Text>
                 </View>
             </View>
             <View style={styles.dataView}>

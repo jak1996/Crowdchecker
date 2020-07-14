@@ -4,11 +4,17 @@ import { TouchableHighlight } from 'react-native-gesture-handler';
 import auth from '@react-native-firebase/auth';
 import * as firebase from "firebase";
 
-
 function Profile({navigation}){
+    var userRef = firebase.database().ref(firebase.auth().currentUser.uid).on('value', (snapshot) => {
+        const userObj = snapshot.val();
+        this.name = userObj.Name;
+        this.number = userObj.Number;
+        this.photourl = userObj.photourl
+      });
+
     return(
         <View style={{flex: 1, backgroundColor: 'white'}}>
-            <View style={styles.UpperView}>
+            <View style={styles.UpperView}> 
                 <View style={styles.UpperBar}>
                     <Text style={styles.MyprofileText}> My Profile</Text>
                     <Text style={styles.EditText}> Edit</Text>
@@ -18,16 +24,17 @@ function Profile({navigation}){
                 </View>
             </View>
             <View style={styles.FieldView}>
-                <Text style={styles.FieldTypeText}>FULL NAME</Text>
-                <Text style={styles.FieldText}>Cristiano Ronaldo</Text>
+                <Text style={styles.FieldTypeText}>Full Name</Text>
+                <Text style={styles.FieldText}>{this.name}
+    </Text>
             </View>
             <View style={styles.FieldView}>
-                <Text style={styles.FieldTypeText}>EMAIL</Text>
+                <Text style={styles.FieldTypeText}>E-Mail</Text>
                 <Text style={styles.FieldText}>{firebase.auth().currentUser.email}</Text>
             </View>
             <View style={styles.FieldView}>
-                <Text style={styles.FieldTypeText}>PHONE</Text>
-                <Text style={styles.FieldText}>333 0000000</Text>
+                <Text style={styles.FieldTypeText}>Cellphone</Text>
+                <Text style={styles.FieldText}>{this.number}</Text>
             </View>
         </View>
     );
