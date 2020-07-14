@@ -9,7 +9,6 @@ function Profile({navigation}){
         const userObj = snapshot.val();
         this.name = userObj.Name;
         this.number = userObj.Number;
-        this.photourl = userObj.photourl
       });
 
     return(
@@ -17,7 +16,7 @@ function Profile({navigation}){
             <View style={styles.UpperView}> 
                 <View style={styles.UpperBar}>
                     <Text style={styles.MyprofileText}> My Profile</Text>
-                    <Text style={styles.EditText}> Edit</Text>
+                    <Text style={styles.EditText} onPress={() => alert('visual purpose only')}> Edit</Text>
                 </View>
                 <View style={styles.ProfileImage}>
                     <Image   source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crowd-checker-33624.appspot.com/o/io.png?alt=media&token=83a064ea-a505-4283-bc86-c4a014e4edff' }} style={styles.img}></Image>

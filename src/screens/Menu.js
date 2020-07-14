@@ -9,28 +9,28 @@ function Menu({navigation}){
         <View style={{flex: 1, backgroundColor:'white'}}>
             <View style={styles.profileView}>
                 <Image source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crowd-checker-33624.appspot.com/o/io.png?alt=media&token=83a064ea-a505-4283-bc86-c4a014e4edff'}} style={styles.img}></Image>
-                <Text style={styles.profileText}>Profile</Text>
+                <Text style={styles.profileText} onPress={() => navigation.navigate('Profile')}>Profile</Text>
                 <TouchableHighlight style={styles.arrowRightButton} onPress={() => navigation.navigate('Profile')}>
                      <Image style = {styles.arrowRightImage} source={require('../../assets/arrow_right.png')}></Image>
                 </TouchableHighlight>
             </View>
             <View style={styles.systemSettingsView}>
-                <TouchableHighlight style={styles.menuOptionButton} onPress={() => alert()}>
+                <TouchableHighlight style={styles.menuOptionButton} onPress={() => alert('visual purpose only')}>
                      <Image style = {styles.menuOptionImage} source={require('../../assets/levels.png')}></Image>
                 </TouchableHighlight>
-                <Text style={styles.menuOptionText}>System settings</Text>
+                <Text style={styles.menuOptionText} onPress={() => alert('visual purpose only')} >System settings</Text>
             </View>
             <View style={styles.statisticsView}>
                 <TouchableHighlight style={styles.menuOptionButton} onPress={() => navigation.navigate('Statistics')}>
                      <Image style = {styles.menuOptionImage} source={require('../../assets/statistics.png')}></Image>
                 </TouchableHighlight>
-                <Text style={styles.menuOptionText}>Statistics</Text>
+                <Text style={styles.menuOptionText} onPress={() => navigation.navigate('Statistics')}>Statistics</Text>
             </View>
             <View style={styles.appSettingsView}>
-                <TouchableHighlight style={styles.menuOptionButton} onPress={() => alert()}>
+                <TouchableHighlight style={styles.menuOptionButton} onPress={() => alert('visual purpose only')}>
                      <Image style = {styles.menuOptionImage} source={require('../../assets/settings-icon.png')}></Image>
                 </TouchableHighlight>
-                <Text style={styles.menuOptionText}>App settings</Text>
+                <Text style={styles.menuOptionText} onPress={() => alert('visual purpose only')} >App settings</Text>
             </View>
             <View style={styles.logoutView}>
                 <TouchableHighlight style={styles.menuOptionButton} onPress={() => navigation.navigate('Login')}>
