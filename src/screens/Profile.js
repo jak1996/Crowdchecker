@@ -20,13 +20,12 @@ function Profile({navigation}){
                     <Text style={styles.EditText}> Edit</Text>
                 </View>
                 <View style={styles.ProfileImage}>
-                    <Image source={require('../../assets/cr7.jpg')} style={styles.img}></Image>
+                    <Image   source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crowd-checker-33624.appspot.com/o/io.png?alt=media&token=83a064ea-a505-4283-bc86-c4a014e4edff' }} style={styles.img}></Image>
                 </View>
             </View>
             <View style={styles.FieldView}>
                 <Text style={styles.FieldTypeText}>Full Name</Text>
-                <Text style={styles.FieldText}>{this.name}
-    </Text>
+                <Text style={styles.FieldText}>{this.name}</Text>
             </View>
             <View style={styles.FieldView}>
                 <Text style={styles.FieldTypeText}>E-Mail</Text>

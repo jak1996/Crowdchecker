@@ -8,7 +8,7 @@ function Menu({navigation}){
     return(
         <View style={{flex: 1, backgroundColor:'white'}}>
             <View style={styles.profileView}>
-                <Image source={require('../../assets/cr7.jpg')} style={styles.img}></Image>
+                <Image source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crowd-checker-33624.appspot.com/o/io.png?alt=media&token=83a064ea-a505-4283-bc86-c4a014e4edff'}} style={styles.img}></Image>
                 <Text style={styles.profileText}>Profile</Text>
                 <TouchableHighlight style={styles.arrowRightButton} onPress={() => navigation.navigate('Profile')}>
                      <Image style = {styles.arrowRightImage} source={require('../../assets/arrow_right.png')}></Image>

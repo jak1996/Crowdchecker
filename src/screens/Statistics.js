@@ -3,24 +3,28 @@ import {View, StyleSheet, Text, Button} from 'react-native';
 import * as firebase from "firebase";
 
 function Statistics({navigation}){
-        var userRef = firebase.database().ref(firebase.auth().currentUser.uid).on('value', (snapshot) => {
+        var userRef = firebase.database().ref(firebase.auth().currentUser.uid).once('value', (snapshot) => {
             const userObj = snapshot.val();
             this.activitydescription = userObj.activitydescription;
             this.activityname = userObj.activityname;
+            this.todayvisits = userObj.todayvisits;
+            this.thismonthvisits = userObj.thismonthvisits;
+
           });
     
     return(
         <View style={{flex: 1, backgroundColor: 'white'}}>
+              <Text style={styles.detailsTitle}>{this.activityname}</Text>
             <View style={styles.UpperView}>
                 <View style={styles.ActivityStatusView}>
                     <View style={styles.StatusBar}/>
-                    <Text style={styles.SystemStatusText}>the system is active</Text>
+                    <Text style={styles.SystemStatusText}>The system is active</Text>
                 </View>
             </View>
             
             <View style={styles.detailsView}>
             <View style={{flex: 0.2, width:'100%'}}>
-    <Text style={styles.detailsTitle}>{this.activityname}</Text>
+  
                 </View>
                 <View style={{flex: 0.2, width:'100%'}}>
                     <Text style={styles.detailsTitle}>Details of the activity</Text>
@@ -30,12 +34,12 @@ function Statistics({navigation}){
                 </View>
             </View>
             <View style={styles.dataView}>
-                <Text style={styles.FieldTypeText}>Avg daily visits</Text>
-                <Text style={styles.FieldText}>0</Text>
+                <Text style={styles.FieldTypeText}>Today Visits</Text>
+                <Text style={styles.FieldText}>{this.todayvisits}</Text>
             </View>
             <View style={styles.dataView}>
-                <Text style={styles.FieldTypeText}>Avg monthly visits</Text>
-                <Text style={styles.FieldText}>0</Text>
+                <Text style={styles.FieldTypeText}>This month visits</Text>
+    <Text style={styles.FieldText}>{this.thismonthvisits}</Text>
             </View>
         </View>
     );
