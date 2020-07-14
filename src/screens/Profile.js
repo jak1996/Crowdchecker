@@ -16,10 +16,10 @@ function Profile({navigation}){
             <View style={styles.UpperView}> 
                 <View style={styles.UpperBar}>
                     <Text style={styles.MyprofileText}> My Profile</Text>
-                    <Text style={styles.EditText} onPress={() => alert('visual purpose only')}> Edit</Text>
+                    <Text style={styles.EditText} onPress={() => alert('not avaiable in demo version')}> Edit</Text>
                 </View>
                 <View style={styles.ProfileImage}>
-                    <Image   source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crowd-checker-33624.appspot.com/o/io.png?alt=media&token=83a064ea-a505-4283-bc86-c4a014e4edff' }} style={styles.img}></Image>
+                    <Image   source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crowd-checker-33624.appspot.com/o/uomo%20normale.jpg?alt=media&token=f891e7e1-7297-4eb7-8c70-394987fa1604' }} style={styles.img}></Image>
                 </View>
             </View>
             <View style={styles.FieldView}>

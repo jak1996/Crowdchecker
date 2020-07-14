@@ -27,7 +27,7 @@ function Statistics({navigation}){
   
                 </View>
                 <View style={{flex: 0.2, width:'100%'}}>
-                    <Text style={styles.detailsTitle}>Details of the activity</Text>
+                    <Text style={styles.detailsTitle}>Activity Details</Text>
                 </View>
                 <View style={{flex: 0.8, flexDirection: 'row', width: '90%'}}>
                     <Text style={styles.detailsDescription}>{this.activitydescription}</Text>

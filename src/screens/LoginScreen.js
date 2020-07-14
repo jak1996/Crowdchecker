@@ -29,12 +29,12 @@ export default class Login extends React.Component {
           <Text
             style={{ position: "absolute", top: 325, left: 45, fontSize: 16 }}
           >
-            Username{" "}
+            E-Mail Address{" "}
           </Text>
           <TextInput
             style={styles.inputUsername}
             autoCapitalize="none"
-            placeholder="insert here your email"
+            placeholder="Insert your E-mail"
             onChangeText={(email) => this.setState({ email })}
             value={this.state.email}
           />
@@ -47,7 +47,7 @@ export default class Login extends React.Component {
             secureTextEntry
             style={styles.inputPassword}
             autoCapitalize="none"
-            placeholder="insert here your password"
+            placeholder="Insert your password"
             onChangeText={(password) => this.setState({ password })}
             value={this.state.password}
           />
