@@ -45,7 +45,10 @@ function Statistics({navigation}){
                 var key = visit.key;
                 if (key === dateOfToday){
                     this.todayvisits = visit.val();
+
                 }
+                else this.todayvisits = 0 ;
+            
              });
              this.thismonthvisits = getMonthlyVisits(visits);
           });
