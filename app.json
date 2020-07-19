@@ -1,31 +1,16 @@
 {
   "expo": {
-    "name": "crowdChecker",
-    "slug": "crowdChecker",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "package": "com.demynator.crowdChecker"
-    }
+   "name": "CrowdChecker",
+   "icon": "./assets/icon.png",
+   "version": "0.1.0",
+   "slug": "crowd-checker",
+   "ios": {
+     "bundleIdentifier": "com.dil.crowdchecker",
+     "buildNumber": "1.0.0"
+   },
+   "android": {
+     "package": "com.dil.crowdchecker",
+     "versionCode": 1
+   }
   }
 }
